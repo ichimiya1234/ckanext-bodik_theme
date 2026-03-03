@@ -1,0 +1,148 @@
+[
+    {
+        "id": "notspecified",
+        "title": "License not specified",
+        "od_conformance": "not reviewed",
+        "osd_conformance": "not reviewed",
+        "is_generic": true,
+        "url": "",
+        "domain_content": false,
+        "domain_data": false,
+        "domain_software": false,
+        "family": "",
+        "maintainer": "",
+        "status": "active"
+    },
+    {
+        "id": "odc-pddl",
+        "title": "Open Data Commons Public Domain Dedication and License (PDDL)",
+        "od_conformance": "approved",
+        "url": "http://www.opendefinition.org/licenses/odc-pddl",
+        "domain_data": true
+    },
+    {
+        "id": "odc-odbl",
+        "title": "Open Data Commons Open Database License (ODbL)",
+        "od_conformance": "approved",
+        "url": "http://www.opendefinition.org/licenses/odc-odbl",
+        "domain_data": true
+    },
+    {
+        "id": "odc-by",
+        "title": "Open Data Commons Attribution License",
+        "od_conformance": "approved",
+        "url": "http://www.opendefinition.org/licenses/odc-by",
+        "domain_data": true
+    },
+    {
+        "id": "cc-zero",
+        "title": "Creative Commons CCZero",
+        "od_conformance": "approved",
+        "url": "http://www.opendefinition.org/licenses/cc-zero",
+        "domain_content": true,
+        "domain_data": true
+    },
+    {
+        "id": "cc-by",
+        "title": "Creative Commons Attribution",
+        "od_conformance": "approved",
+        "url": "http://www.opendefinition.org/licenses/cc-by"
+    },
+    {
+        "id": "cc-by-21-jp",
+        "title": "Creative Commons Attribution 2.1 JP",
+        "od_conformance": "approved",
+        "url": "https://creativecommons.org/licenses/by/2.1/jp/"
+    },
+    {
+        "id": "cc-by-40-intl",
+        "title": "Creative Commons Attribution 4.0 International",
+        "od_conformance": "approved",
+        "url": "https://creativecommons.org/licenses/by/4.0/deed.ja"
+    },
+    {
+        "id": "PDL1.0",
+        "title": "Public Data License 1.0",
+        "od_conformance": "approved",
+        "url": "https://www.digital.go.jp/resources/open_data/public_data_license_v1.0"
+    },
+    {
+        "id": "cc-by-sa",
+        "title": "Creative Commons Attribution Share-Alike",
+        "od_conformance": "approved",
+        "url": "http://www.opendefinition.org/licenses/cc-by-sa",
+        "domain_content": true
+    },
+    {
+        "id": "gfdl",
+        "title": "GNU Free Documentation License",
+        "od_conformance": "approved",
+        "url": "http://www.opendefinition.org/licenses/gfdl",
+        "domain_content": true
+    },
+    {
+        "id": "other-open",
+        "title": "Other (Open)",
+        "od_conformance": "approved",
+        "is_generic": true,
+        "domain_content": true,
+        "url": ""
+    },
+    {
+        "id": "other-pd",
+        "title": "Other (Public Domain)",
+        "od_conformance": "approved",
+        "is_generic": true,
+        "domain_content": true,
+        "url": ""
+    },
+    {
+        "id": "other-at",
+        "title": "Other (Attribution)",
+        "od_conformance": "approved",
+        "is_generic": true,
+        "domain_content": true,
+        "url": ""
+    },
+    {
+        "id": "other-copyright",
+        "title": "Other",
+        "od_conformance": "not reviewed",
+        "is_generic": true,
+        "url": ""
+    },
+    {
+        "id": "uk-ogl",
+        "title": "UK Open Government Licence (OGL)",
+        "od_conformance": "approved",
+        "url": "https://www.nationalarchives.gov.uk/doc/open-government-licence/version/3/",
+        "domain_content": true
+    },
+    {
+        "id": "cc-nc",
+        "title": "Creative Commons Non-Commercial (Any)",
+        "od_conformance": "not reviewed",
+        "url": "http://creativecommons.org/licenses/by-nc/2.0/"
+    },
+    {
+        "id": "other-nc",
+        "title": "Other (Non-Commercial)",
+        "od_conformance": "not reviewed",
+        "is_generic": true,
+        "url": ""
+    },
+    {
+        "id": "other-closed",
+        "title": "Other (Not Open)",
+        "od_conformance": "not reviewed",
+        "is_generic": true,
+        "url": ""
+    },
+    {
+        "id": "japanese",
+        "title": "Japanese Government License",
+        "od_conformance": "not reviewed",
+        "is_generic": true,
+        "url": ""
+    }
+]

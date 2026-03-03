@@ -79,5 +79,7 @@ setup(
     entry_points='''
         [ckan.plugins]
         bodik_theme=ckanext.bodik_theme.plugin:BodikThemePlugin
+        [babel.extractors]
+        ckan = ckan.lib.extract:extract_ckan
     ''',
 )

@@ -5,6 +5,7 @@ from ckan.common import config
 import sys
 import json
 import datetime
+from ckan.lib.plugins import DefaultTranslation
 
 def dataset_count( search_org ):
     if search_org != "":
@@ -59,13 +60,25 @@ def wordpress_url():
 def map_url():
     return toolkit.config.get('bodik.map_url', '#')
 
+def translate_license_title(title):
+    # Translate license names. using ckanext-bodik_theme translations
+    from ckan.common import _
+    return _(title) if title else '' 
 
-class BodikThemePlugin(plugins.SingletonPlugin):
+
+class BodikThemePlugin(plugins.SingletonPlugin, DefaultTranslation):
     plugins.implements(plugins.IConfigurer)
     plugins.implements(plugins.ITemplateHelpers)
+    plugins.implements(plugins.ITranslation)
+    plugins.implements(plugins.IPackageController, inherit=True)
     # IConfigurer
 
     def update_config(self, config_):
+        import os
+        licenses_path = os.path.join(
+            os.path.dirname(__file__), 'data', 'licenses.json'
+        )
+        config_['licenses_group_url'] = 'file://' + licenses_path
         toolkit.add_template_directory(config_, 'templates')
         toolkit.add_public_directory(config_, 'public')
         toolkit.add_resource('fanstatic', 'bodik_theme')
@@ -80,4 +93,19 @@ class BodikThemePlugin(plugins.SingletonPlugin):
             'bodik_theme_site_url': site_url,
             'bodik_theme_wordpress_url': wordpress_url,
             'bodik_theme_map_url': map_url,
+            'bodik_theme_translate_license': translate_license_title,
         }
+    
+    def after_dataset_search(self, search_results, search_params):
+        # Translate the display name for the license facet.
+        facets = search_results.get('search_facets')
+        if not facets or 'license_id' not in facets:
+            return search_results
+
+        for item in facets['license_id']['items']:
+            display_name = item.get('display_name')
+            if display_name:
+                item['display_name'] = translate_license_title(display_name)
+
+        return search_results
+

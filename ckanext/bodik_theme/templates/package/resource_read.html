@@ -18,12 +18,23 @@
       </tr>
       <tr>
         <th scope="row">{{ _('License') }}</th>
-        <td>{% snippet "snippets/license.html", pkg_dict=pkg, text_only=True %}</td>
+        <td>
+          {% if package.get('license_url') %}
+          <a href="{{ package.license_url }}" rel="dc:rights">{{
+            h.bodik_theme_translate_license(package.get('license_title')) }}</a>
+          {% elif package.get('license_id') %}
+          <span property="dc:rights">{{ h.bodik_theme_translate_license(package.get('license_title')) }}</span>
+          {% else %}
+          <span>{{ _('No License Provided') }}</span>
+          {% endif %}
+        </td>
       </tr>
       {% if res.last_modified %}
       <tr>
         <th scope="row">{{ _('Last updated') }}</th>
-        <td>{{ h.bodik_theme_render_datetime(res.last_modified, date_format='%Y-%m-%d %H:%M') or h.render_datetime(res.revision_timestamp, date_format='%Y-%m-%d %H:%M') or h.render_datetime(res.created,  date_format='%Y-%m-%d %H:%M') or _('unknown') }}</td>
+        <td>{{ h.bodik_theme_render_datetime(res.last_modified, date_format='%Y-%m-%d %H:%M') or
+          h.render_datetime(res.revision_timestamp, date_format='%Y-%m-%d %H:%M') or h.render_datetime(res.created,
+          date_format='%Y-%m-%d %H:%M') or _('unknown') }}</td>
       </tr>
       {% endif %}
       {% if res.created %}
@@ -33,9 +44,12 @@
       </tr>
       {% endif %}
       {% for key, value in h.format_resource_items(res.items()) %}
-        {% if key not in ('tracking summary', 'tracking_summary') %}
-        <tr class="toggle-more"><th scope="row">{{ key }}</th><td>{{ value }}</td></tr>
-        {% endif %}
+      {% if key not in ('tracking summary', 'tracking_summary') %}
+      <tr class="toggle-more">
+        <th scope="row">{{ key }}</th>
+        <td>{{ value }}</td>
+      </tr>
+      {% endif %}
       {% endfor %}
     </tbody>
   </table>
