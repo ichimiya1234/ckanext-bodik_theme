@@ -30,3 +30,6 @@ msgstr "公共データ利用規約（第1.0版）"
 
 msgid "Japanese Government License"
 msgstr "政府標準利用規約"
+
+msgid "Last Modified Old"
+msgstr "最終更新日(古い順)"
